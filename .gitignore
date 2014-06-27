@@ -1,0 +1,10 @@
+.DS_Store
+*.pyc
+*.egg-info
+.webassets-cache
+cache_*
+/gibe2
+/build
+/activate
+/.env
+/.ropeproject
