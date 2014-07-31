@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}        
+
+<header>
+  <h1><a href="{{ url_for('index') }}" id="site-title">{{ site.name }} {% if site.subtitle %} <strong>{{ site.subtitle }}</strong>{% endif %}</a></h1>
+</header>
+
+<p>
+The D Language Dive (dlangdive for short) is for experienced programmers in
+other languages to learn the D programming language.
+</p>
+
+<section id="article-list">
+
+<ul>
+{% for chapter in pages|chapters %}
+<li>{{ chapter.chapter_title }}</a>
+<ul>
+{% for section in chapter.sections %}
+<li>{{ section.section }}<a href="{{ url_for('page', path=section.path) }}">{{ section.title }}</a>
+{% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>
+
+</section>
+{% endblock content %}
